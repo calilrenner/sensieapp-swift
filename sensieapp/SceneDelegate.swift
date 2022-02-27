@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  sensieapp
-//
-//  Created by Calil Renner Silva on 24/02/22.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

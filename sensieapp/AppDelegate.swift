@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  sensieapp
-//
-//  Created by Calil Renner Silva on 24/02/22.
-//
-
 import UIKit
 
 @main
