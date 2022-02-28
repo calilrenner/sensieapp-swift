@@ -10,6 +10,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var rotationYLabel: UILabel!
     @IBOutlet weak var rotationZLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var frequencyLabel: UILabel!
+    @IBOutlet weak var frequencySlider: UISlider!
+    @IBOutlet weak var depthSlider: UISlider!
+    @IBOutlet weak var depthLabel: UILabel!
+    @IBOutlet weak var amplitudeSlider: UISlider!
+    @IBOutlet weak var amplitudeLabel: UILabel!
     
     @IBAction func startTapped(_ sender: Any) {
         flangerConductor.toggleOscillator()
@@ -27,6 +33,21 @@ class ViewController: UIViewController {
           default:
           print("Unable to change button title text.")
           }
+    }
+    
+    @IBAction func frequencyChanged(_ sender: UISlider) {
+        flangerConductor.osc.frequency = sender.value
+        frequencyLabel.text = String(Int(sender.value))
+    }
+    
+    @IBAction func depthChanged(_ sender: UISlider) {
+        flangerConductor.flanger.depth = sender.value
+        depthLabel.text = String(format: "%.2f", (sender.value))
+    }
+    
+    @IBAction func amplitudeChanged(_ sender: UISlider) {
+        flangerConductor.osc.amplitude = sender.value
+        amplitudeLabel.text = String(format: "%.2f", (sender.value))
     }
     
     func initializeMotion() {
@@ -74,6 +95,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeMotion()
+        frequencySlider.value = 400
     }
 }
 
