@@ -27,13 +27,4 @@ class FlangerConductor {
   func toggleOscillator() {
     osc.isStarted ? osc.stop() : osc.play()
   }
-    
-  func updateFrequency() {
-    if osc.frequency > 600 {
-      osc.frequency = 440
-    } else {
-      osc.frequency = 1000
-    }
-  }
-
 }
